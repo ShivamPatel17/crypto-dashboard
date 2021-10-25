@@ -1,0 +1,49 @@
+$font-size: 1.5rem;
+$primary-color: rgb(203, 252, 198);
+
+
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $primary-color;
+  font-family: sans-serif;
+  
+}
+
+.navbar{
+  list-style-type: none;
+  padding: 0.25rem;
+  overflow: hidden;
+  background-color: #333;
+
+  .left{
+    float:left
+    
+  }
+  .right{
+    float:right;
+    margin-right: 0.1rem;
+  }
+  a{
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    font-size: $font-size;
+  }
+  a:hover{
+    color: $primary-color
+  }
+}
+
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}

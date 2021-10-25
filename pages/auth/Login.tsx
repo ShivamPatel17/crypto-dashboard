@@ -45,7 +45,7 @@ const Login = () => {
       />
       <br />
       <button onClick={handleLogin}>Log In</button>
-      <button><Link href="/auth/Register"><a>Login</a></Link></button>
+      <button><Link href="/auth/Register"><a>Register</a></Link></button>
     </div>
     
   );

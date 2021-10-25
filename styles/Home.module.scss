@@ -5,11 +5,9 @@ $primary-color: rgb(203, 252, 198);
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
-  display: flex;
+  display: grid;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
   background-color: $primary-color;
   font-family: sans-serif;
   

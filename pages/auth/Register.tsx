@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../config/FirebaseSetup'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 const Login = () => {
   const router = useRouter()
 
@@ -43,7 +44,7 @@ const Login = () => {
       />
       <br />
       <button onClick={handleRegister}>Register</button>
-      <button><a href="/auth/Login">Login</a></button>
+      <button><Link href="/auth/Login"><a>Login</a></Link></button>
     </div>
   );
 };

@@ -24,7 +24,7 @@ function App() {
         dispatch(saveUser(undefined));
       }
     });
-  }, [auth, dispatch]);
+  }, [dispatch]);
 
 
   return(

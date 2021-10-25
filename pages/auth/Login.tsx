@@ -4,6 +4,7 @@ import { auth } from '../../config/FirebaseSetup'
 import Home from "../../pages/Home";
 import { Redirect } from 'react-router'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 
 const Login = () => {
@@ -44,7 +45,7 @@ const Login = () => {
       />
       <br />
       <button onClick={handleLogin}>Log In</button>
-      <button><a href="/auth/Register">Register</a></button>
+      <button><Link href="/auth/Register"><a>Login</a></Link></button>
     </div>
     
   );

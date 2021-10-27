@@ -10,7 +10,7 @@ export default function CryptoCard({tokenInfoDoc}){
                     {`${data['qty']} ${data['sym']}`}
                 </div>
                 <div className={styles.row}>
-                    Average Cost: ${`${data['avgCost']}`}
+                    {`Average Cost: \$${data['avgCost']}`}
                 </div>
                 <div className={styles.row}>
                     {`${data['location']}`}

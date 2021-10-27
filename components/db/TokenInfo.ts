@@ -13,8 +13,10 @@ export async function addTokenInfo(uid:string, symbol: string, quantity: number,
         location: location
       });
       console.log("Document written with ID: ", docRef.id);
+      alert(`Successfully add TokenInfo for ${symbol}.`)
     } catch (e) {
-      console.error("Error adding document: ", e);
+        console.error("Error adding document: ", e);
+        alert(`Error adding ${symbol}. Error Log:\n${e}`)
     }
 }
 

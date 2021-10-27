@@ -3,9 +3,12 @@ import { addTokenInfo } from '../../components/db/TokenInfo'
 import { useState } from 'react'
 import { auth } from '../../config/FirebaseSetup'
 import { useSelector } from "react-redux";
+import { useRouter } from 'next/router'
 
 
 const AddTokenInfoCard = () => {
+    const router = useRouter()
+
     const user = useSelector((state:any) => state.auth.value);
     const [symbol, setSymbol] = useState("")
     const [quantity, setQuantity] = useState(0.0)
@@ -13,7 +16,8 @@ const AddTokenInfoCard = () => {
     const [location, setLocation] = useState("")
 
     const addtokeninfo = async () =>{
-        addTokenInfo(user, symbol, quantity, avgCost, location)
+        await addTokenInfo(user, symbol, quantity, avgCost, location)
+        router.reload()
     }
 
     

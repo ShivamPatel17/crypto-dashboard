@@ -13,6 +13,7 @@ import AddTokenCard from '../components/cards/AddTokenInfoCard'
 import { GetStaticProps } from 'next';
 import { collection, query, doc, DocumentSnapshot, getDoc, getDocs, QueryDocumentSnapshot, QuerySnapshot, where } from "firebase/firestore";
 import { firestore as db } from '../config/FirebaseSetup'
+import  AddTokenInfoCard  from '../components/cards/AddTokenInfoCard'
 
 
 function appendTokenInfo(){
@@ -34,37 +35,48 @@ export default function Home(){
 
   return(
     <>
-    {/* NAV BAR */}
-    <div className={styles.navbar}>
-      <li className={styles.dropdown}>
-        <button className={styles.dropbtn}>
-          {user}
-        </button>
-        <div className={styles.dropdownContent}>
-          <Link href="/user-settings">
-            <a onClick={handleLogout}>Settings</a>
-          </Link>
-          <Link href="/auth/Login">
-            <a onClick={handleLogout}>Logout</a>
-          </Link>
-        </div>
-      </li>
-    </div>
-    {/* END NAV BAR */}
-    <div className={styles.container}>
-      <div className={styles.CryptoCardContainer}>
-        <AddTokenCard/>
-        {tokenInfoData &&
-          tokenInfoData.map((val, index) =>{
-            //val.data()
-            return (
-              <CryptoCard key={index} tokenInfoDoc={val}/>
-            )
-          })
-        }
+      {/* NAV BAR */}
+      <div className={styles.navbar}>
+        <li className={styles.dropdown}>
+          <button className={styles.dropbtn}>
+            {user}
+          </button>
+          <div className={styles.dropdownContent}>
+            <Link href="/user-settings">
+              <a onClick={handleLogout}>Settings</a>
+            </Link>
+            <Link href="/auth/Login">
+              <a onClick={handleLogout}>Logout</a>
+            </Link>
+          </div>
+        </li>
       </div>
-    </div>
-    </>
+      {/* END NAV BAR */}
+      {/* OVERVIEW */}
+      <div className={styles.overview}>
+        <div>
+          Overall Balance: $1,000,000
+        </div>
+        <div className={styles.addTokenInfo}>
+          <AddTokenInfoCard />
+        </div>
+      </div>
+      {/* END OVERVIEW */}
+      {/* CRYPTO INFO CARDS */}
+      <div className={styles.outerCryptoCardContainer}>
+        <div className={styles.innerCryptoCardContainer}>
+          {tokenInfoData &&
+            tokenInfoData.map((val, index) =>{
+              //val.data()
+              return (
+                <CryptoCard key={index} tokenInfoDoc={val}/>
+              )
+            })
+          }
+        </div> 
+      </div>
+      {/* END CRYPTO INFO CARDS */}
+      </>
   )
 
   

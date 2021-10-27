@@ -27,9 +27,10 @@ function App() {
   }, [dispatch]);
 
 
-  return(
-    <Home/>
-  )
+  if(user){
+    return <Home/>
+  }
+  return <Login/>
 }
 
 export default App;

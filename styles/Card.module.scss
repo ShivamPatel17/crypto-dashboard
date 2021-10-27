@@ -1,0 +1,13 @@
+$min-width:12rem;
+$min-height:10rem;
+$font-size:2rem;
+
+.container{
+    display: grid;
+    grid-column: auto;
+    background-color: white;
+    margin:1rem;
+    border-radius: 0.5rem;
+    font-size: $font-size;
+    font-weight: 400;
+}

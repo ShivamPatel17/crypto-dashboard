@@ -1,16 +1,22 @@
 $font-size: 1.5rem;
 $primary-color: rgb(203, 252, 198);
+$card-gap: 1rem;
 
-
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: grid;
-  flex-direction: column;
-  justify-content: center;
+.container{
+  margin:auto;
+  height:100%;
+}
+.CryptoCardContainer {
   background-color: $primary-color;
   font-family: sans-serif;
-  
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-content: flex-start;
 }
 
 .navbar{
@@ -20,8 +26,7 @@ $primary-color: rgb(203, 252, 198);
   background-color: #333;
 
   .left{
-    float:left
-    
+    float:left  
   }
   .right{
     float:right;
@@ -36,7 +41,48 @@ $primary-color: rgb(203, 252, 198);
   a:hover{
     color: $primary-color
   }
+  img{
+    width: 100%;
+    height: auto;
+  }
 }
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+  .dropbtn {
+    font-size: $font-size; 
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  .dropdownContent{
+    display: none;
+    position: absolute;
+    right:0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    float: right;
+    a{
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: right;
+    }
+  }
+}
+.dropdown:hover .dropdownContent{
+  display: block;
+}
+
 
 
 @media (max-width: 600px) {

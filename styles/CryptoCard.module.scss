@@ -1,0 +1,17 @@
+$font-size: 1.5rem;
+.container{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    margin: 5%;
+    .topRow{
+        font-weight: 800;
+        font-size: 1.2*$font-size;
+        margin-bottom: 5%;
+    }
+    .row{
+        font-size: $font-size;
+        white-space: nowrap;
+        color:rgb(46, 46, 46);
+        margin-bottom: 2%;
+    }
+}

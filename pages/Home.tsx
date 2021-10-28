@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.scss'
 import { useState, useEffect } from "react"
 import { Redirect, Route } from "react-router";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Login from './auth/Login';
 import Link from 'next/link'
 import { auth } from '../config/FirebaseSetup'
@@ -13,7 +13,9 @@ import AddTokenCard from '../components/cards/AddTokenInfoCard'
 import { GetStaticProps } from 'next';
 import { collection, query, doc, DocumentSnapshot, getDoc, getDocs, QueryDocumentSnapshot, QuerySnapshot, where } from "firebase/firestore";
 import { firestore as db } from '../config/FirebaseSetup'
-import  AddTokenInfoCard  from '../components/cards/AddTokenInfoCard'
+import AddTokenInfoCard  from '../components/cards/AddTokenInfoCard'
+import AccountSummary from '../components/cards/AccountSummary'
+
 
 
 function appendTokenInfo(){
@@ -22,6 +24,7 @@ function appendTokenInfo(){
 export default function Home(){
   const[tokenInfoData, setTokenInfoData] = useState([])
   const user = useSelector((state:any) => state.auth.value);
+  const dispatch = useDispatch()
 
   //renders stuff at component run
   useEffect(() => {
@@ -55,10 +58,10 @@ export default function Home(){
       {/* OVERVIEW */}
       <div className={styles.overview}>
         <div>
-          Overall Balance: $1,000,000
-        </div>
-        <div className={styles.addTokenInfo}>
-          <AddTokenInfoCard />
+          {tokenInfoData.length>0 &&
+            <AccountSummary tokenInfoData={tokenInfoData}/>
+          }
+  
         </div>
       </div>
       {/* END OVERVIEW */}

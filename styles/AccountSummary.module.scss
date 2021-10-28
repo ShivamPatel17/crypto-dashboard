@@ -1,0 +1,25 @@
+$primary-color: rgb(203, 252, 198);
+
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+}
+.container{
+    display: grid;    
+    margin: 2rem;
+    width: 100%;
+    
+    font-size:1.5rem;
+    white-space: nowrap;
+
+    background-color: $primary-color;
+    border-radius: 1rem;
+
+    .column{
+        margin:2rem
+    }
+    .title{
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+}

@@ -10,13 +10,11 @@ $card-gap: 1rem;
   .innerCryptoCardContainer {
     background-color: $primary-color;
     font-family: sans-serif;
-    min-height: 100vh;
     margin:auto;
     
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow-x: scroll;
   }
 }
 
